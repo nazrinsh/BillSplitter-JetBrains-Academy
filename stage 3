@@ -1,0 +1,17 @@
+import random
+try:
+    num_of_ppl = int(input("Enter the number of friends joining (including you):\n"))
+    assert num_of_ppl > 0, "No one is joining for the party"
+    print("Enter the name of every friend (including you), each on a new line:")
+    names = {input() for _ in range(num_of_ppl)}
+    bill = int(input("Enter the total bill value:\n"))
+    lucky = input("Do you want to use the \"Who is lucky?\" feature? Write Yes/No:\n")
+    if lucky == "Yes":
+        print(f"{random.choice(list(names))} is the lucky one!")
+    else:
+        print("No one is going to be lucky")
+
+except AssertionError as err:
+    print(err)
+except ValueError:
+    pass
