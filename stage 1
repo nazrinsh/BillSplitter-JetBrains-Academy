@@ -1,0 +1,19 @@
+# first way
+num_of_ppl = int(input("Enter the number of friends joining (including you):\n"))
+if num_of_ppl <= 0:
+    print("No one is joining for the party")
+else:
+    print("Enter the name of every friend (including you), each on a new line:")
+    print({input(): 0 for ppl in range(num_of_ppl)})
+    
+# second way
+friends = {}
+num_of_ppl = int(input("Enter the number of friends joining (including you):\n"))
+if num_of_ppl <= 0:
+    print("No one is joining for the party")
+else:
+    print("Enter the name of every friend (including you), each on a new line:")
+    for ppl in range(num_of_ppl):
+        names = input()
+        friends[names] = 0
+    print(friends)
